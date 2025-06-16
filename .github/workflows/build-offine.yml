@@ -1,9 +1,4 @@
 on:
-  push:
-    branches:
-      - master
-  schedule:
-    - cron: '0 2 * * *'
   workflow_dispatch:
 
 name: Checkout and Create Release Version
@@ -18,7 +13,8 @@ jobs:
       - name: Check Version
         id: get-version
         run: |
-          version=$(curl -s 'https://api.github.com/repos/wojiushixiaobai/1Panel/releases/latest' | jq -r ".tag_name")
+          # version=$(curl -s 'https://api.github.com/repos/wojiushixiaobai/1Panel/releases/latest' | jq -r ".tag_name")
+          version="v1.10.30-lts"
           docker_version=$(curl -s 'https://api.github.com/repos/moby/moby/releases/latest' | jq -r ".tag_name")
           compose_version=$(curl -s 'https://api.github.com/repos/docker/compose/releases/latest' | jq -r ".tag_name")
           if [ -z "${version}" ] || [ "${version}" == "null" ]; then
