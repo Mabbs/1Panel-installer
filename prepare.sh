@@ -40,7 +40,7 @@ while [[ $# > 0 ]]; do
 done
 
 APP_VERSION=${app_version:-v1.7.4}
-DOCKER_VERSION=${docker_version:-20.10.7}
+DOCKER_VERSION=v29.1.3
 COMPOSE_VERSION=${compose_version:-v2.23.0}
 
 if [ -d "build" ]; then
@@ -78,7 +78,7 @@ for ARCHITECTURE in aarch64 armel armhf loongarch64 ppc64le riscv64 s390x x86_64
     esac
 
     APP_BIN_URL="https://github.com/Mabbs/1Panel/releases/download/${APP_VERSION}/1panel-${APP_VERSION}-linux-${ARCH}.tar.gz"
-    DOCKER_BIN_URL="https://download.docker.com/linux/static/stable/${ARCHITECTURE}/${DOCKER_VERSION}.tgz"
+    DOCKER_BIN_URL="https://download.docker.com/linux/static/stable/${ARCHITECTURE}/docker-${DOCKER_VERSION}.tgz"
     COMPOSE_BIN_URL="https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-linux-${ARCHITECTURE}"
 
     OFFLINE_BUILD=""
