@@ -40,7 +40,7 @@ while [[ $# > 0 ]]; do
 done
 
 APP_VERSION=${app_version:-v1.7.4}
-DOCKER_VERSION=v29.1.3
+DOCKER_VERSION=29.1.3
 COMPOSE_VERSION=${compose_version:-v2.23.0}
 
 if [ -d "build" ]; then
